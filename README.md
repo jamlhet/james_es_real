@@ -31,3 +31,4 @@ Se deben configurar las siguientes ClassPath Variables:
 1. JAMES_MONGO -> GIT_HOME/James_Lib/lib/mongodb
 2. JAMES_SPRING -> GIT_HOME/James_Lib/lib/spring
 3. JAMES_SPRING_DATA -> GIT_HOME/James_Lib/lib/spring_data
+4. JAMES_OTROS -> GIT_HOME/james_lib/lib/otros
