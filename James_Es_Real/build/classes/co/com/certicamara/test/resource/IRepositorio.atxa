@@ -1,0 +1,459 @@
+@prefix atxa-rse-eclipse: <http://www.architexa.com/rdf/rse-eclipse#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix atxa-jdt-wkspc: <http://www.architexa.com/rdf/jdt-wkspc#> .
+@prefix atxa-core: <http://www.architexa.com/rdf/core#> .
+@prefix atxa: <http://www.architexa.com/rdf/> .
+@prefix atxa-jdt: <http://www.architexa.com/rdf/jdt#> .
+
+<http://www.architexa.com/rdf/rse-eclipse#src_sltest_slresource_slco_slcom_slcerticamara_sltest_slresource_slIRepositorio.atxa> a atxa-core:reloFile .
+
+atxa:DetailNode atxa-core:detailLevel "0" .
+
+atxa-core:docRoot atxa-core:browseModel "com.architexa.diagrams.relo.jdt/com.architexa.diagrams.relo.jdt.browse.ClassStrucBrowseModel" ;
+	atxa-core:contains _:node18tkqd47nx968 .
+
+_:node18tkqd47nx968 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository> ;
+	atxa-core:posX "267" ;
+	atxa-core:posY "696" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente> .
+
+_:node18tkqd47nx968 atxa-core:contains _:node18tkqd47nx969 .
+
+_:node18tkqd47nx969 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente> ;
+	atxa-core:posX "273" ;
+	atxa-core:posY "721" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente.guardarCliente(ClienteDTO,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente.actualizarCliente(ClienteDTO,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente.borrarCliente(ClienteVO,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente.buscarCliente(ClienteVO,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente.RepositorioCliente(String,)> .
+
+_:node18tkqd47nx12 a atxa-core:link ;
+	atxa-core:model atxa-jdt:inherits ;
+	rdf:subject _:node18tkqd47nx969 ;
+	rdf:object _:node18tkqd47nx970 ;
+	atxa-core:bendpoint _:node18tkqd47nx16954 .
+
+_:node18tkqd47nx16954 atxa-core:bpLocation "483,624" ;
+	atxa-core:bpIndex "0" .
+
+_:node18tkqd47nx969 atxa-core:contains _:node18tkqd47nx972 .
+
+_:node18tkqd47nx972 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente.guardarCliente(ClienteDTO,)> ;
+	atxa-core:posX "274" ;
+	atxa-core:posY "739" .
+
+_:node18tkqd47nx969 atxa-core:contains _:node18tkqd47nx1911 .
+
+_:node18tkqd47nx1911 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente.actualizarCliente(ClienteDTO,)> ;
+	atxa-core:posX "274" ;
+	atxa-core:posY "755" .
+
+_:node18tkqd47nx969 atxa-core:contains _:node18tkqd47nx1912 .
+
+_:node18tkqd47nx1912 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente.borrarCliente(ClienteVO,)> ;
+	atxa-core:posX "274" ;
+	atxa-core:posY "771" .
+
+_:node18tkqd47nx969 atxa-core:contains _:node18tkqd47nx1913 .
+
+_:node18tkqd47nx1913 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente.buscarCliente(ClienteVO,)> ;
+	atxa-core:posX "274" ;
+	atxa-core:posY "787" .
+
+_:node18tkqd47nx969 atxa-core:contains _:node18tkqd47nx1914 .
+
+_:node18tkqd47nx1914 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.respository$RepositorioCliente.RepositorioCliente(String,)> ;
+	atxa-core:posX "274" ;
+	atxa-core:posY "803" .
+
+atxa-core:docRoot atxa-core:contains _:node18tkqd47nx976 .
+
+_:node18tkqd47nx976 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd> ;
+	atxa-core:posX "214" ;
+	atxa-core:posY "368" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio> .
+
+_:node18tkqd47nx976 atxa-core:contains _:node18tkqd47nx970 .
+
+_:node18tkqd47nx970 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio> ;
+	atxa-core:posX "220" ;
+	atxa-core:posY "393" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.guardar(Object,ClienteVO,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.actualizar(Object,ClienteVO,Class,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.borrarColeccion()> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.buscar(ClienteVO,Class,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.collectionName> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.darMongoTemplate()> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.darTodos(Class,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.eliminar(ClienteVO,Class,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.getCollectionName()> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.guardarVarios(List,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.IRepositorio(String,)> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.setCollectionName(String,)> .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx977 .
+
+_:node18tkqd47nx977 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.guardar(Object,ClienteVO,)> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "427" .
+
+_:node18tkqd47nx1235 a atxa-core:link ;
+	atxa-core:model atxa-jdt:calls ;
+	rdf:subject _:node18tkqd47nx977 ;
+	rdf:object _:node18tkqd47nx1602 .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx1603 .
+
+_:node18tkqd47nx1603 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.actualizar(Object,ClienteVO,Class,)> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "443" .
+
+_:node18tkqd47nx2545 a atxa-core:link ;
+	atxa-core:model atxa-jdt:calls ;
+	rdf:subject _:node18tkqd47nx1603 ;
+	rdf:object _:node18tkqd47nx1602 ;
+	atxa-core:bendpoint _:node18tkqd47nx10190 .
+
+_:node18tkqd47nx10190 atxa-core:bpLocation "801,451" ;
+	atxa-core:bpIndex "0" .
+
+_:node18tkqd47nx2545 atxa-core:bendpoint _:node18tkqd47nx10191 .
+
+_:node18tkqd47nx10191 atxa-core:bpLocation "801,433" ;
+	atxa-core:bpIndex "1" .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx3929 .
+
+_:node18tkqd47nx3929 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.borrarColeccion()> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "459" .
+
+_:node18tkqd47nx2565 a atxa-core:link ;
+	atxa-core:model atxa-jdt:calls ;
+	rdf:subject _:node18tkqd47nx3929 ;
+	rdf:object _:node18tkqd47nx3930 ;
+	atxa-core:bendpoint _:node18tkqd47nx16426 .
+
+_:node18tkqd47nx16426 atxa-core:bpLocation "390,322" ;
+	atxa-core:bpIndex "0" .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx3931 .
+
+_:node18tkqd47nx3931 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.buscar(ClienteVO,Class,)> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "475" .
+
+_:node18tkqd47nx2654 a atxa-core:link ;
+	atxa-core:model atxa-jdt:calls ;
+	rdf:subject _:node18tkqd47nx3931 ;
+	rdf:object _:node18tkqd47nx3932 ;
+	atxa-core:bendpoint _:node18tkqd47nx10192 .
+
+_:node18tkqd47nx10192 atxa-core:bpLocation "833,483" ;
+	atxa-core:bpIndex "0" .
+
+_:node18tkqd47nx2654 atxa-core:bendpoint _:node18tkqd47nx10193 .
+
+_:node18tkqd47nx10193 atxa-core:bpLocation "833,449" ;
+	atxa-core:bpIndex "1" .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx3933 .
+
+_:node18tkqd47nx3933 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.collectionName> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "411" .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx3934 .
+
+_:node18tkqd47nx3934 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.darMongoTemplate()> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "491" .
+
+_:node18tkqd47nx2682 a atxa-core:link ;
+	atxa-core:model atxa-jdt:calls ;
+	rdf:subject _:node18tkqd47nx3934 ;
+	rdf:object _:node18tkqd47nx3935 ;
+	atxa-core:bendpoint _:node18tkqd47nx5297 .
+
+_:node18tkqd47nx5297 atxa-core:bpLocation "795,451" ;
+	atxa-core:bpIndex "0" .
+
+_:node18tkqd47nx2682 atxa-core:bendpoint _:node18tkqd47nx5298 .
+
+_:node18tkqd47nx5298 atxa-core:bpLocation "795,98" ;
+	atxa-core:bpIndex "1" .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx3938 .
+
+_:node18tkqd47nx3938 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.darTodos(Class,)> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "507" .
+
+_:node18tkqd47nx3364 a atxa-core:link ;
+	atxa-core:model atxa-jdt:calls ;
+	rdf:subject _:node18tkqd47nx3938 ;
+	rdf:object _:node18tkqd47nx3939 ;
+	atxa-core:bendpoint _:node18tkqd47nx10194 .
+
+_:node18tkqd47nx10194 atxa-core:bpLocation "844,515" ;
+	atxa-core:bpIndex "0" .
+
+_:node18tkqd47nx3364 atxa-core:bendpoint _:node18tkqd47nx10195 .
+
+_:node18tkqd47nx10195 atxa-core:bpLocation "844,466" ;
+	atxa-core:bpIndex "1" .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx3940 .
+
+_:node18tkqd47nx3940 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.eliminar(ClienteVO,Class,)> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "523" .
+
+_:node18tkqd47nx3386 a atxa-core:link ;
+	atxa-core:model atxa-jdt:calls ;
+	rdf:subject _:node18tkqd47nx3940 ;
+	rdf:object _:node18tkqd47nx3941 ;
+	atxa-core:bendpoint _:node18tkqd47nx10196 .
+
+_:node18tkqd47nx10196 atxa-core:bpLocation "845,531" ;
+	atxa-core:bpIndex "0" .
+
+_:node18tkqd47nx3386 atxa-core:bendpoint _:node18tkqd47nx10197 .
+
+_:node18tkqd47nx10197 atxa-core:bpLocation "845,482" ;
+	atxa-core:bpIndex "1" .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx3942 .
+
+_:node18tkqd47nx3942 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.getCollectionName()> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "539" .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx3943 .
+
+_:node18tkqd47nx3943 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.guardarVarios(List,)> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "555" .
+
+_:node18tkqd47nx3418 a atxa-core:link ;
+	atxa-core:model atxa-jdt:calls ;
+	rdf:subject _:node18tkqd47nx3943 ;
+	rdf:object _:node18tkqd47nx3944 ;
+	atxa-core:bendpoint _:node18tkqd47nx10198 .
+
+_:node18tkqd47nx10198 atxa-core:bpLocation "863,563" ;
+	atxa-core:bpIndex "0" .
+
+_:node18tkqd47nx3418 atxa-core:bendpoint _:node18tkqd47nx10199 .
+
+_:node18tkqd47nx10199 atxa-core:bpLocation "863,499" ;
+	atxa-core:bpIndex "1" .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx3945 .
+
+_:node18tkqd47nx3945 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.IRepositorio(String,)> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "571" .
+
+_:node18tkqd47nx3440 a atxa-core:link ;
+	atxa-core:model atxa-jdt:calls ;
+	rdf:subject _:node18tkqd47nx3945 ;
+	rdf:object _:node18tkqd47nx3946 .
+
+_:node18tkqd47nx970 atxa-core:contains _:node18tkqd47nx3946 .
+
+_:node18tkqd47nx3946 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.ddd$IRepositorio.setCollectionName(String,)> ;
+	atxa-core:posX "221" ;
+	atxa-core:posY "587" .
+
+atxa-core:docRoot atxa-core:contains _:node18tkqd47nx1133 .
+
+_:node18tkqd47nx1133 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core> ;
+	atxa-core:posX "880" ;
+	atxa-core:posY "383" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate> .
+
+_:node18tkqd47nx1133 atxa-core:contains _:node18tkqd47nx1604 .
+
+_:node18tkqd47nx1604 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate> ;
+	atxa-core:posX "886" ;
+	atxa-core:posY "408" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate.save(Object,String,)> , <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate.findById(Object,Class,String,)> , <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate.findAll(Class,String,)> , <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate.remove(Object,String,)> , <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate.insert(Collection,String,)> .
+
+_:node18tkqd47nx1604 atxa-core:contains _:node18tkqd47nx1602 .
+
+_:node18tkqd47nx1602 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate.save(Object,String,)> ;
+	atxa-core:posX "887" ;
+	atxa-core:posY "426" .
+
+_:node18tkqd47nx1604 atxa-core:contains _:node18tkqd47nx3932 .
+
+_:node18tkqd47nx3932 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate.findById(Object,Class,String,)> ;
+	atxa-core:posX "887" ;
+	atxa-core:posY "442" .
+
+_:node18tkqd47nx1604 atxa-core:contains _:node18tkqd47nx3939 .
+
+_:node18tkqd47nx3939 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate.findAll(Class,String,)> ;
+	atxa-core:posX "887" ;
+	atxa-core:posY "458" .
+
+_:node18tkqd47nx1604 atxa-core:contains _:node18tkqd47nx3941 .
+
+_:node18tkqd47nx3941 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate.remove(Object,String,)> ;
+	atxa-core:posX "887" ;
+	atxa-core:posY "474" .
+
+_:node18tkqd47nx1604 atxa-core:contains _:node18tkqd47nx3944 .
+
+_:node18tkqd47nx3944 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.data.mongodb.core$MongoTemplate.insert(Collection,String,)> ;
+	atxa-core:posX "887" ;
+	atxa-core:posY "490" .
+
+atxa-core:docRoot atxa-core:contains _:node18tkqd47nx3947 .
+
+_:node18tkqd47nx3947 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#com.mongodb> ;
+	atxa-core:posX "513" ;
+	atxa-core:posY "271" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#com.mongodb> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#com.mongodb$DBCollection> .
+
+_:node18tkqd47nx3947 atxa-core:contains _:node18tkqd47nx3948 .
+
+_:node18tkqd47nx3948 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#com.mongodb$DBCollection> ;
+	atxa-core:posX "519" ;
+	atxa-core:posY "296" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#com.mongodb$DBCollection> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#com.mongodb$DBCollection.remove(DBObject,)> .
+
+_:node18tkqd47nx3948 atxa-core:contains _:node18tkqd47nx3930 .
+
+_:node18tkqd47nx3930 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#com.mongodb$DBCollection.remove(DBObject,)> ;
+	atxa-core:posX "520" ;
+	atxa-core:posY "314" .
+
+atxa-core:docRoot atxa-core:contains _:node18tkqd47nx3949 .
+
+_:node18tkqd47nx3949 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource> ;
+	atxa-core:posX "353" ;
+	atxa-core:posY "98" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ProveedorContextoSpring> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring> .
+
+_:node18tkqd47nx3949 atxa-core:contains _:node18tkqd47nx6187 .
+
+_:node18tkqd47nx6187 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ProveedorContextoSpring> ;
+	atxa-core:posX "359" ;
+	atxa-core:posY "171" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ProveedorContextoSpring> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ProveedorContextoSpring.setApplicationContext(ApplicationContext,)> .
+
+_:node18tkqd47nx5622 a atxa-core:link ;
+	atxa-core:model atxa-jdt:inherits ;
+	rdf:subject _:node18tkqd47nx6187 ;
+	rdf:object _:node18tkqd47nx6188 ;
+	atxa-core:bendpoint _:node18tkqd47nx16955 .
+
+_:node18tkqd47nx16955 atxa-core:bpLocation "527,27" ;
+	atxa-core:bpIndex "0" .
+
+_:node18tkqd47nx6187 atxa-core:contains _:node18tkqd47nx6190 .
+
+_:node18tkqd47nx6190 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ProveedorContextoSpring.setApplicationContext(ApplicationContext,)> ;
+	atxa-core:posX "360" ;
+	atxa-core:posY "189" .
+
+_:node18tkqd47nx5366 a atxa-core:link ;
+	atxa-core:model atxa-jdt:calls ;
+	rdf:subject _:node18tkqd47nx6190 ;
+	rdf:object _:node18tkqd47nx6186 .
+
+_:node18tkqd47nx3949 atxa-core:contains _:node18tkqd47nx3950 .
+
+_:node18tkqd47nx3950 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring> ;
+	atxa-core:posX "823" ;
+	atxa-core:posY "123" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring.getApplicationContext()> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring.ContextoSpring()> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring.ctx> , <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring.setApplicationContext(ApplicationContext,)> .
+
+_:node18tkqd47nx3950 atxa-core:contains _:node18tkqd47nx3935 .
+
+_:node18tkqd47nx3935 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring.getApplicationContext()> ;
+	atxa-core:posX "824" ;
+	atxa-core:posY "157" .
+
+_:node18tkqd47nx3950 atxa-core:contains _:node18tkqd47nx6184 .
+
+_:node18tkqd47nx6184 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring.ContextoSpring()> ;
+	atxa-core:posX "824" ;
+	atxa-core:posY "173" .
+
+_:node18tkqd47nx3950 atxa-core:contains _:node18tkqd47nx6185 .
+
+_:node18tkqd47nx6185 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring.ctx> ;
+	atxa-core:posX "824" ;
+	atxa-core:posY "141" .
+
+_:node18tkqd47nx3950 atxa-core:contains _:node18tkqd47nx6186 .
+
+_:node18tkqd47nx6186 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#co.com.certicamara.test.resource$ContextoSpring.setApplicationContext(ApplicationContext,)> ;
+	atxa-core:posX "824" ;
+	atxa-core:posY "189" .
+
+atxa-core:docRoot atxa-core:contains _:node18tkqd47nx6191 .
+
+_:node18tkqd47nx6191 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.context> ;
+	atxa-core:posX "415" ;
+	atxa-core:posY "-52" .
+
+<http://www.architexa.com/rdf/jdt-wkspc#org.springframework.context> atxa-core:contains <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.context$ApplicationContextAware> .
+
+_:node18tkqd47nx6191 atxa-core:contains _:node18tkqd47nx6188 .
+
+_:node18tkqd47nx6188 a atxa-core:node ;
+	atxa-core:model <http://www.architexa.com/rdf/jdt-wkspc#org.springframework.context$ApplicationContextAware> ;
+	atxa-core:posX "421" ;
+	atxa-core:posY "-27" .
+
+@prefix atxa-rse-eclipse: <http://www.architexa.com/rdf/rse-eclipse#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix atxa-jdt-wkspc: <http://www.architexa.com/rdf/jdt-wkspc#> .
+@prefix atxa-core: <http://www.architexa.com/rdf/core#> .
+@prefix atxa: <http://www.architexa.com/rdf/> .
+@prefix atxa-jdt: <http://www.architexa.com/rdf/jdt#> .
+
+<http://www.architexa.com/rdf/rse-eclipse#src_sltest_slresource_slco_slcom_slcerticamara_sltest_slresource_slIRepositorio.atxa> a atxa-core:reloFile ;
+	atxa-core:contains _:node18tkqd47nx972 , _:node18tkqd47nx1911 , _:node18tkqd47nx1912 , _:node18tkqd47nx1913 , _:node18tkqd47nx1914 , _:node18tkqd47nx969 , _:node18tkqd47nx968 , _:node18tkqd47nx977 , _:node18tkqd47nx1603 , _:node18tkqd47nx3929 , _:node18tkqd47nx3931 , _:node18tkqd47nx3933 , _:node18tkqd47nx3934 , _:node18tkqd47nx3938 , _:node18tkqd47nx3940 , _:node18tkqd47nx3942 , _:node18tkqd47nx3943 , _:node18tkqd47nx3945 , _:node18tkqd47nx3946 , _:node18tkqd47nx970 , _:node18tkqd47nx976 , _:node18tkqd47nx1602 , _:node18tkqd47nx3932 , _:node18tkqd47nx3939 , _:node18tkqd47nx3941 , _:node18tkqd47nx3944 , _:node18tkqd47nx1604 , _:node18tkqd47nx1133 , _:node18tkqd47nx3930 , _:node18tkqd47nx3948 , _:node18tkqd47nx3947 , _:node18tkqd47nx6190 , _:node18tkqd47nx6187 , _:node18tkqd47nx3935 , _:node18tkqd47nx6184 , _:node18tkqd47nx6185 , _:node18tkqd47nx6186 , _:node18tkqd47nx3950 , _:node18tkqd47nx3949 , _:node18tkqd47nx6188 , _:node18tkqd47nx6191 , atxa-core:docRoot , _:node18tkqd47nx972 , _:node18tkqd47nx1911 , _:node18tkqd47nx1912 , _:node18tkqd47nx1913 , _:node18tkqd47nx1914 , _:node18tkqd47nx969 , _:node18tkqd47nx968 , _:node18tkqd47nx977 , _:node18tkqd47nx1603 , _:node18tkqd47nx3929 , _:node18tkqd47nx3931 , _:node18tkqd47nx3933 , _:node18tkqd47nx3934 , _:node18tkqd47nx3938 , _:node18tkqd47nx3940 , _:node18tkqd47nx3942 , _:node18tkqd47nx3943 , _:node18tkqd47nx3945 , _:node18tkqd47nx3946 , _:node18tkqd47nx970 , _:node18tkqd47nx976 , _:node18tkqd47nx1602 , _:node18tkqd47nx3932 , _:node18tkqd47nx3939 , _:node18tkqd47nx3941 , _:node18tkqd47nx3944 , _:node18tkqd47nx1604 , _:node18tkqd47nx1133 , _:node18tkqd47nx3930 , _:node18tkqd47nx3948 , _:node18tkqd47nx3947 , _:node18tkqd47nx6190 , _:node18tkqd47nx6187 , _:node18tkqd47nx3935 , _:node18tkqd47nx6184 , _:node18tkqd47nx6185 , _:node18tkqd47nx6186 , _:node18tkqd47nx3950 , _:node18tkqd47nx3949 , _:node18tkqd47nx6188 , _:node18tkqd47nx6191 , atxa-core:docRoot , _:node18tkqd47nx12 , _:node18tkqd47nx1235 , _:node18tkqd47nx2545 , _:node18tkqd47nx2565 , _:node18tkqd47nx2654 , _:node18tkqd47nx2682 , _:node18tkqd47nx3364 , _:node18tkqd47nx3386 , _:node18tkqd47nx3418 , _:node18tkqd47nx3440 , _:node18tkqd47nx5622 , _:node18tkqd47nx5366 , _:node18tkqd47nx12 , _:node18tkqd47nx1235 , _:node18tkqd47nx2545 , _:node18tkqd47nx2565 , _:node18tkqd47nx2654 , _:node18tkqd47nx2682 , _:node18tkqd47nx3364 , _:node18tkqd47nx3386 , _:node18tkqd47nx3418 , _:node18tkqd47nx3440 , _:node18tkqd47nx5622 , _:node18tkqd47nx5366 .
+
