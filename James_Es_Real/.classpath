@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resource"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="var" path="JAMES_MONGO/mongo-2.7.3.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="var" path="JAMES_OTROS/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING/org.springframework.aop-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING/org.springframework.asm-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING/org.springframework.aspects-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING/org.springframework.beans-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING/org.springframework.context-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING/org.springframework.context.support-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING/org.springframework.core-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING/org.springframework.expression-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING/org.springframework.transaction-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING/spring-test-2.5.6.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING_DATA/spring-data-commons-core-1.2.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING_DATA/spring-data-mongodb-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING_DATA/spring-data-mongodb-cross-store-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_SPRING_DATA/spring-data-mongodb-log4j-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

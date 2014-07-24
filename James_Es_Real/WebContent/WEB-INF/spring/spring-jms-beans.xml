@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xmlns:util="http://www.springframework.org/schema/util"	
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
+       	   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+           http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+<!-- 
+   <bean id="EmbeddedJms" class="org.hornetq.integration.spring.SpringJmsBootstrap" init-method="start" destroy-method="stop"/>
+    -->
+    
+	<bean id="persistirEvidenciaDigitalXmlListener" class="com.certicamara.certifactura.eventual.listeners.evidenciaDigital.PersistirEvidenciaDigitalXmlListener"/>
+	<bean id="persistirEvidenciaDigitalPdfListener" class="com.certicamara.certifactura.eventual.listeners.evidenciaDigital.PersistirEvidenciaDigitalPdfListener"/>
+
+	
+	<bean id="notificacionPagoPSEListener" class="com.certicamara.certifactura.eventual.listeners.notificacion.pago.pse.NotificacionPagoPSEListener" />
+        
+	<bean id="fontBean133462384309185621" class="net.sf.jasperreports.engine.fonts.SimpleFontFamily">
+		<property name="name" value="Nimbus Mono L"/>
+		<property name="normal" value="fonts/nimbus_mono_l.ttf"/>
+		<property name="pdfEmbedded" value="false"/>
+	</bean>
+    
+    <context:component-scan base-package="com.certicamara.certifactura" />	
+	<context:annotation-config />
+	
+
+	<import resource="classpath:com/certicamara/certifactura/aplicacion/aplication-context.xml"/>
+	<import resource="classpath:com/certicamara/certifactura/vistas/aplication-context.xml"/>
+	
+	<bean id="proveedorContextoSpring" class="com.certicamara.certifactura.utilitarios.ProveedorContextoSpring"></bean>
+    
+    <!-- Container Aceptar/rechazar terpel -->
+    <bean id="listenerContainerAceptarRechazarTerpel" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="aceptarRechazarTerpelQueue"/>
+        <property name="messageListener" ref="listenerAceptarRechazarTerpel"/>
+    </bean>
+    
+    <bean id="listenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="queue"/>
+        <property name="messageListener" ref="listener"/>
+    </bean>
+
+	<!-- containers logs -->
+    <bean id="listenerContainerLogElectronico" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="queueElectronico"/>
+        <property name="messageListener" ref="listenerElectronico"/>
+    </bean>
+    
+    <bean id="listenerContainerLogComputador" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="queueComputador"/>
+        <property name="messageListener" ref="listenerComputador"/>
+    </bean>
+    
+    <bean id="listenerContainerLogCuentadeCobro" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="queueCuentaCobro"/>
+        <property name="messageListener" ref="listenerCuentaCobro"/>
+    </bean>
+    
+	<!-- Container generar reporte -->
+    <bean id="listenerContainerGenerarReporte" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="generarReporteQueue"/>
+        <property name="messageListener" ref="listenerGenerarReporte"/>
+    </bean>
+    
+    <!-- Container actualizar reporte -->
+    <bean id="listenerContainerActualizarReporte" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="actualizarReporteQueue"/>
+        <property name="messageListener" ref="listenerActualizarReporte"/>
+    </bean>
+    
+    <!-- Container para el batch de adquirientes -->
+    <bean id="listenerContainerActualizarBatchAdquiriente" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="actualizarBatchAdquirienteQueue"/>
+        <property name="messageListener" ref="listenerActualizarBatchAdquiriente"/>
+    </bean>
+    
+	<!-- containers emitir -->
+    <bean id="listenerContainerElectronicoEmitir" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualElectronicaEmitirQueue"/>
+        <property name="messageListener" ref="listenerElectronicaEmitir"/>
+    </bean>
+    
+    <bean id="listenerContainerPorComputadorEmitir" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualComputadorEmitirQueue"/>
+        <property name="messageListener" ref="listenerPorComputadorEmitir"/>
+    </bean>
+    
+    <bean id="listenerContainerCuentaCobroEmitir" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualCuentaCobroEmitirQueue"/>
+        <property name="messageListener" ref="listenerCuentaCobroEmitir"/>
+    </bean>
+    
+    <!-- containers aceptar -->
+    <bean id="listenerContainerElectronicoAceptar" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualElectronicaAceptarQueue"/>
+        <property name="messageListener" ref="listenerElectronicaAceptar"/>
+    </bean>
+    
+    <bean id="listenerContainerPorComputadorAceptar" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualComputadorAceptarQueue"/>
+        <property name="messageListener" ref="listenerPorComputadorAceptar"/>
+    </bean>
+    
+    <bean id="listenerContainerCuentaCobroAceptar" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualCuentaCobroAceptarQueue"/>
+        <property name="messageListener" ref="listenerCuentaCobroAceptar"/>
+    </bean>
+    
+    <!-- containers rechazar -->
+    <bean id="listenerContainerElectronicoRechazar" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualElectronicaRechazarQueue"/>
+        <property name="messageListener" ref="listenerElectronicaRechazar"/>
+    </bean>
+    
+    <bean id="listenerContainerPorComputadorRechazar" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualComputadorRechazarQueue"/>
+        <property name="messageListener" ref="listenerPorComputadorRechazar"/>
+    </bean>
+    
+    <bean id="listenerContainerCuentaCobroRechazar" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualCuentaCobroRechazarQueue"/>
+        <property name="messageListener" ref="listenerCuentaCobroRechazar"/>
+    </bean>
+    
+    <!-- containers anular -->
+    <bean id="listenerContainerElectronicoAnular" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualElectronicaAnularQueue"/>
+        <property name="messageListener" ref="listenerElectronicaAnular"/>
+    </bean>
+    
+    <bean id="listenerContainerPorComputadorAnular" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualComputadorAnularQueue"/>
+        <property name="messageListener" ref="listenerPorComputadorAnular"/>
+    </bean>
+    
+    <bean id="listenerContainerCuentaCobroAnular" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="eventualCuentaCobroAnularQueue"/>
+        <property name="messageListener" ref="listenerCuentaCobroAnular"/>
+    </bean>
+    
+    <bean id="listener" class="com.certicamara.certifactura.eventual.listeners.FacturaElectronicaListener"/>
+    
+	<!-- listener aceptar/rechazar terpel -->
+    <bean id="listenerAceptarRechazarTerpel" class="com.certicamara.certifactura.eventual.listeners.ListenerAceptacionRechazoTerpel"/>
+    
+    <!-- Listeners logs documentos -->    
+    <bean id="listenerElectronico" class="com.certicamara.certifactura.eventual.listeners.logs.LogElectronicaListener"/>
+    
+    <bean id="listenerComputador" class="com.certicamara.certifactura.eventual.listeners.logs.LogComputadorListener"/>
+    
+    <bean id="listenerCuentaCobro" class="com.certicamara.certifactura.eventual.listeners.logs.LogCuentaCobroListener"/>
+    
+	<!-- Generer reporte listener -->
+    <bean id="listenerGenerarReporte" class="com.certicamara.certifactura.eventual.listeners.GenerarReporteListener"/>
+    
+    <!-- Actualizar reporte listener -->
+    <bean id="listenerActualizarReporte" class="com.certicamara.certifactura.eventual.listeners.ActualizarReporteListener"/>
+    
+    <!-- Actualizar reporte listener -->
+    <bean id="listenerActualizarBatchAdquiriente" class="com.certicamara.certifactura.eventual.batch.listeners.ActualizarBatchAdquirienteListener"/>
+           
+    <!-- Listeners emitir documentos -->
+    <bean id="listenerElectronicaEmitir" class="com.certicamara.certifactura.eventual.listeners.notificacionEmitirDocumentos.NotificacionElectronicoEmitirListener"/>
+    
+    <bean id="listenerPorComputadorEmitir" class="com.certicamara.certifactura.eventual.listeners.notificacionEmitirDocumentos.NotificacionPorComputadorEmitirListener"/>
+    
+    <bean id="listenerCuentaCobroEmitir" class="com.certicamara.certifactura.eventual.listeners.notificacionEmitirDocumentos.NotificacionCuentaDeCobroEmitirListener"/>
+    
+    <!-- Listeners aceptar documentos -->
+    <bean id="listenerElectronicaAceptar" class="com.certicamara.certifactura.eventual.listeners.notificacionAceptarDocumentos.NotificacionElectronicoAceptarListener"/>
+    
+    <bean id="listenerPorComputadorAceptar" class="com.certicamara.certifactura.eventual.listeners.notificacionAceptarDocumentos.NotificacionPorComputadorAceptarListener"/>
+    
+    <bean id="listenerCuentaCobroAceptar" class="com.certicamara.certifactura.eventual.listeners.notificacionAceptarDocumentos.NotificacionCuentaDeCobroAceptarListener"/>
+    
+    <!-- Listeners rechazar documentos -->
+    <bean id="listenerElectronicaRechazar" class="com.certicamara.certifactura.eventual.listeners.notificacionRechazarDocumentos.NotificacionElectronicoRechazarListener"/>
+    
+    <bean id="listenerPorComputadorRechazar" class="com.certicamara.certifactura.eventual.listeners.notificacionRechazarDocumentos.NotificacionPorComputadorRechazarListener"/>
+    
+    <bean id="listenerCuentaCobroRechazar" class="com.certicamara.certifactura.eventual.listeners.notificacionRechazarDocumentos.NotificacionCuentaDeCobroRechazarListener"/>
+    
+	<!-- Listeners anular documentos -->
+    <bean id="listenerElectronicaAnular" class="com.certicamara.certifactura.eventual.listeners.notificacionAnularDocumentos.NotificacionElectronicoAnularListener"/>
+    
+    <bean id="listenerPorComputadorAnular" class="com.certicamara.certifactura.eventual.listeners.notificacionAnularDocumentos.NotificacionPorComputadorAnularListener"/>
+    
+    <bean id="listenerCuentaCobroAnular" class="com.certicamara.certifactura.eventual.listeners.notificacionAnularDocumentos.NotificacionCuentaDeCobroAnularListener"/>
+     
+     <bean id="actualizadorReporteVirgin1" class="com.certicamara.certifactura.eventual.actualizadores.ActualizadorReporteVirgin1" />
+    
+     <bean id="notificacionActualizacionAdquirienteListener" class="com.certicamara.certifactura.eventual.listeners.notificacion.actualizacion.adquiriente.NotificacionActualizacionAdquirienteListener" />
+   	<!--  JMS Queue--> 
+	<bean id="queue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="facturaElectronicaQueue" />
+	</bean>
+	
+	<!-- colas logs -->
+	
+	<!-- JMS Queue -->
+	<bean id="aceptarRechazarTerpelQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="aceptarRechazarTerpelQueue" />
+	</bean>
+	
+	<bean id="queueElectronico" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="logElectronicoQueue" />
+	</bean>
+	
+	<bean id="queueComputador" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="logComputadorQueue" />
+	</bean>
+	
+	<bean id="queueCuentaCobro" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="logCuentaCobroQueue" />
+	</bean>
+	
+	<!-- Cola para el batch de adquirientes -->  
+	<bean id="actualizarBatchAdquirienteQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="actualizarBatchAdquirienteQueue" />
+	</bean>
+	
+	<!-- colas para generar reportes -->  
+	<bean id="generarReporteQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="generarReporteQueue" />
+	</bean>
+	
+	<bean id="actualizarReporteQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="actualizarReporteQueue" />
+	</bean>
+	
+	<!--    colas para de emision de documentos -->  
+	<bean id="eventualElectronicaEmitirQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualElectronicaEmitirQueue" />
+	</bean>
+	
+	<bean id="eventualComputadorEmitirQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualComputadorEmitirQueue" />
+	</bean>
+	
+	<bean id="eventualCuentaCobroEmitirQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualCuentaCobroEmitirQueue" />
+	</bean>
+	
+	<!--    colas para aceptar documentos -->  
+	<bean id="eventualElectronicaAceptarQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualElectronicaAceptarQueue" />
+	</bean>
+	
+	<bean id="eventualComputadorAceptarQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualComputadorAceptarQueue" />
+	</bean>
+	
+	<bean id="eventualCuentaCobroAceptarQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualCuentaCobroAceptarQueue" />
+	</bean>
+	
+	<!--    colas para rechazar documentos -->  
+	<bean id="eventualElectronicaRechazarQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualElectronicaRechazarQueue" />
+	</bean>
+	
+	<bean id="eventualComputadorRechazarQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualComputadorRechazarQueue" />
+	</bean>
+	
+	<bean id="eventualCuentaCobroRechazarQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualCuentaCobroRechazarQueue" />
+	</bean>
+	
+	<!--    colas para anular documentos -->  
+	<bean id="eventualElectronicaAnularQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualElectronicaAnularQueue" />
+	</bean>
+	
+	<bean id="eventualComputadorAnularQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualComputadorAnularQueue" />
+	</bean>
+	
+	<bean id="eventualCuentaCobroAnularQueue" class="org.hornetq.jms.client.HornetQQueue">
+		<constructor-arg value="eventualCuentaCobroAnularQueue" />
+	</bean>
+    
+    <!-- JNDI Template -->
+	<bean id="jndiTemplate" class="org.springframework.jndi.JndiTemplate">
+	    <property name="environment">
+	        <props>
+	            <prop key="java.naming.factory.initial">
+	                org.jnp.interfaces.NamingContextFactory
+	            </prop>
+	            <prop key="java.naming.provider.url">
+	                 jnp://localhost:1099
+	            </prop>
+	            <prop key="java.naming.factory.url.pkgs">
+	                org.jboss.naming:org.jnp.interfaces
+	            </prop>
+	        </props>
+	    </property>
+	</bean>
+	
+	<!-- JMS Connection Factory -->
+	<bean id="jmsConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+      <property name="jndiTemplate" ref="jndiTemplate" />
+      <property name="jndiName">
+          <value>/ConnectionFactory</value>
+      </property>
+  	</bean>
+
+	<bean id="userCredentialsConnectionFactory" class="org.springframework.jms.connection.UserCredentialsConnectionFactoryAdapter">
+		<property name="targetConnectionFactory" ref="jmsConnectionFactory"/>
+		<property name="username" value="user"/>
+		<property name="password" value="pass"/>
+	</bean>
+	
+			<!-- Crea la conexión a mongo -->
+	<mongo:db-factory id="mongoFactory" host="${mongo.direccion}" port="${mongo.puerto}" dbname="${mongo.nombreBaseDatos}" username="${mongo.usuario}" password="${mongo.contrasena}"/>
+  
+  	<!-- Crea el bean mongo template usado para consultar y modificar la base de datos -->
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoFactory"/>
+		<property name="writeConcern">
+			<util:constant static-field="com.mongodb.WriteConcern.SAFE" />
+		</property>
+	</bean>  
+	
+	<!-- Carga el archivo con las propiedades de mongo -->
+	<context:property-placeholder location="classpath:/com/certicamara/certifactura/aplicacion/configuracion/mongo.properties"/>
+	
+	<task:annotation-driven />
+	
+	<beans:bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<beans:property name="basenames">
+			<beans:list>
+				<beans:value>resources.application</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	
+</beans>   

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CertifacturaEventual" default="all" basedir=".">
+	<property file="build.properties" />
+	<!-- Define the properties used by the build -->
+
+	<property name="app.name" value="CertiFacturaEventual" />
+	<property name="work.home" value="${basedir}/work" />
+	<property name="dist.home" value="${basedir}/dist" />
+	<property name="src.home" value="${basedir}/src" />
+	<property name="web.home" value="${basedir}/WebContent" />
+	<property name="local.lib" value="${basedir}/WebContent/WEB-INF/lib" />
+	
+		
+	<!--
+	<property name="spring.lib" value="${tcserver.lib}/spring" />
+	<property name="hornetq.lib" value="${tcserver.lib}/hornetq" />
+	<property name="jasper.lib" value="${tcserver.lib}/jasper" />
+	<property name="otros.lib" value="${tcserver.lib}/otros" />
+	-->
+	<property name="axis.lib" value="${local.lib}/axis" />
+	<property name="spring.lib" value="${local.lib}/spring" />
+	<property name="guice.lib" value="${local.lib}/guice" />
+	<property name="mongodb.lib" value="${local.lib}/mongodb" />
+	<property name="hornetq.lib" value="${local.lib}/hornetq" />
+	<property name="jasper.lib" value="${local.lib}/jasper" />
+	<property name="axis.lib"      value="${local.lib}/axis"/>
+	<property name="otros.lib" value="${local.lib}/otros" />
+	<property name="spring_mvc.lib" value="${local.lib}/spring_mvc" />
+	<property name="spring_data.lib" value="${local.lib}/spring_data" />
+	<property name="adss.lib" value="${local.lib}/adss" />
+	<property name="firma.lib" value="${local.lib}/firma" />
+	<property name="firmaPdf.lib" value="${local.lib}/firma_pdf" />
+	<property name="axis.lib" value="${local.lib}/axis" />
+
+	<path id="catalina-ant-classpath">
+	    <fileset dir="${tcserver.base}/lib">
+	        <include name="catalina-ant.jar"/>
+	        <include name="tomcat-coyote.jar"/>
+	        <include name="tomcat-util.jar"/>
+	    </fileset>
+		<fileset dir="${tcserver.base}/bin">
+	        <include name="tomcat-juli.jar"/>
+	    </fileset>
+	</path>
+	
+	<taskdef name="catalina-deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="catalina-ant-classpath"/>
+
+	<!-- Define the CLASSPATH -->
+	<path id="compile.classpath">
+						
+		<fileset dir="${capas.lib}/${axis.lib}">
+			<include name="axis-ant.jar"/>
+			<include name="axis.jar"/>
+			<include name="commons-discovery-0.2.jar"/>
+			<include name="jaxrpc.jar"/>
+			<include name="log4j-1.2.8.jar"/>
+			<include name="saaj.jar"/>
+			<include name="wsdl4j-1.5.1.jar"/>
+		</fileset>
+		<fileset dir="${capas.lib}/${otros.lib}">
+			<include name="nimbus.jar"/>
+		</fileset>
+	</path>
+	
+	<path id="compile.classpath">
+		
+		<fileset dir="${local.lib}">
+			<include name="*.jar" />
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="all" depends="clean,compile,dist" description="Clean work dirs, then compile and create a WAR" />
+
+	<target name="clean" description="Delete old work and dist directories">
+		<delete dir="${work.home}" />
+		<delete dir="${dist.home}" />
+		<delete dir="${work.home}/META-INF" />
+		<delete dir="${work.home}/resources" />
+	</target>
+
+	<target name="prepare" depends="clean" description="Create working dirs and copy static files to work dir">
+		<mkdir dir="${dist.home}" />
+		<mkdir dir="${work.home}/WEB-INF/classes" />
+		<mkdir dir="${work.home}/META-INF" />
+		<mkdir dir="${work.home}/resources" />
+		<!-- Copy static HTML and JSP files to work dir -->
+		<copy todir="${work.home}/META-INF">
+			<fileset dir="${web.home}/META-INF" />
+		</copy>
+		
+		<copy todir="${work.home}/WEB-INF">
+			<fileset dir="${web.home}/WEB-INF" excludes="**/*.classes" />
+		</copy>
+	</target>
+
+	<target name="compile" depends="prepare" description="Compile Java sources and copy to WEB-INF/classes dir">
+		<javac srcdir="${src.home}" destdir="${work.home}/WEB-INF/classes" debug="true">
+			<classpath refid="compile.classpath" />
+		</javac>
+		<copy todir="${work.home}/WEB-INF/classes">
+			<fileset dir="${src.home}" excludes="**/*.java" />
+		</copy>
+	</target>
+
+	<target name="dist" depends="compile" description="Create WAR file for binary distribution">
+		<jar jarfile="${dist.home}/${app.name}.war" basedir="${work.home}" />
+	</target>
+
+	<target name="deploywar" depends="clean,compile,dist" description="Deploy application as a WAR file">
+		<copy todir="${deploy.war.path}" preservelastmodified="true">
+			<fileset dir="${dist.home}/">
+				<include name="${app.name}.war" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="war" depends="compile">
+	    <war destfile="${dist.home}/${app.name}.war" webxml="WebContent/WEB-INF/web.xml">
+	        <fileset dir="WebContent"/>
+	        <lib dir="${local.lib}">
+	        	<include name="*.jar" />
+	    	</lib>
+	    	<lib dir="${spring.lib}">
+				<include name="*.jar" />
+			</lib>
+	    	<lib dir="${spring_mvc.lib}">
+				<include name="*.jar" />
+			</lib>
+	    	<lib dir="${spring_data.lib}">
+				<include name="*.jar" />
+			</lib>
+			<lib dir="${hornetq.lib}">
+				<include name="*.jar" />
+			</lib>
+	    	<lib dir="${firma.lib}">
+				<include name="*.jar" />
+			</lib>
+			<lib dir="${jasper.lib}">
+				<include name="*.jar" />
+			</lib>
+	    	<lib dir="${axis.lib}">
+				<include name="*.jar" />
+			</lib>	    		    	
+			<lib dir="${otros.lib}">
+			</lib>
+	    	<lib dir="${mongodb.lib}">
+			</lib>
+	    	<lib dir="${guice.lib}">
+			</lib>
+	    	<lib dir="${adss.lib}">
+			</lib>
+	    	<lib dir="${firmaPdf.lib}">
+	    	</lib>	    	
+	    	<lib dir="${axis.lib}">
+	    	</lib> 
+	    	
+	    	<lib dir="${axis.lib}"></lib>
+	    	
+	        <classes dir="${work.home}/WEB-INF/classes"/>
+	    </war>
+		<copy todir="${deploy.war.path}" preservelastmodified="true">
+			<fileset dir="${dist.home}/">
+				<include name="${app.name}.war" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="deployVersionado" depends="empaquetarVersionado" description="Deploy application as a WAR file">
+		<catalina-deploy url="${url.deploy}"
+					username="${username.deploy}"
+					password="${password.deploy}"
+					path="/${app.name}##${app.web.version}"
+					war="${dist.home}/${app.name}##${app.web.version}.war" />
+	</target>
+	<target name="empaquetarVersionado" depends="compile">
+		<war destfile="${dist.home}/${app.name}##${app.web.version}.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent"/>
+			<lib dir="${local.lib}">
+	        	<include name="*.jar" />
+	    	</lib>
+	    	<lib dir="${spring.lib}">
+				<include name="*.jar" />
+			</lib>
+	    	<lib dir="${spring_mvc.lib}">
+				<include name="*.jar" />
+			</lib>
+	    	<lib dir="${spring_data.lib}">
+				<include name="*.jar" />
+			</lib>
+			<lib dir="${hornetq.lib}">
+				<include name="*.jar" />
+			</lib>
+	    	<lib dir="${firma.lib}">
+				<include name="*.jar" />
+			</lib>
+			<lib dir="${jasper.lib}">
+				<include name="*.jar" />
+			</lib>
+			<lib dir="${otros.lib}">
+			</lib>
+	    	<lib dir="${mongodb.lib}">
+			</lib>
+	    	<lib dir="${guice.lib}">
+			</lib>
+	    	<lib dir="${adss.lib}">
+			</lib>
+	    	<lib dir="${firmaPdf.lib}">
+	    	</lib>			
+			<lib dir="${axis.lib}">
+			</lib>
+			
+			<classes dir="${work.home}/WEB-INF/classes"/>
+		</war>
+	</target>
+
+</project>
