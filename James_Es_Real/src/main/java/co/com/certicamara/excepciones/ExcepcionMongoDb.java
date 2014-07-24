@@ -5,8 +5,8 @@ package co.com.certicamara.excepciones;
  * CertiFactura
  * Certicámara S.A.
  * ExcepcionMongoDb
- * @author Seven4N Ltda.
- * Nov 2, 2012
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
 public class ExcepcionMongoDb extends ExcepcionTecnica
 {

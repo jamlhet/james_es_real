@@ -3,11 +3,12 @@ package co.com.certicamara.ddd;
 
 
 /**
+ * 
  * CertiFactura
  * Certicámara S.A.
- * Factory
- * @author Seven4N Ltda.
- * Apr 20, 2012
+ * IFabricaCanonico
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
 public interface IFabricaCanonico<T,DTO>
 {

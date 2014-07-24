@@ -3,9 +3,12 @@ package co.com.certicamara.ddd;
 import java.util.LinkedHashMap;
 
 /**
- * CertiFactura Certicámara S.A. Factory
  * 
- * @author Seven4N Ltda. Apr 20, 2012
+ * CertiFactura
+ * Certicámara S.A.
+ * IFabricaCliente
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
 public interface IFabricaCliente<T, DTO>
 {

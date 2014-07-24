@@ -18,9 +18,12 @@ import co.com.certicamara.respository.RepositorioCliente;
 import co.com.certicamara.vo.ClienteVO;
 
 /**
- * CertiFactura Certicámara S.A. GenerarPedfTest
  * 
- * @author Seven4N Ltda. 26/06/2013
+ * CertiFactura
+ * Certicámara S.A.
+ * JamesEsRealTest
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
 @RunWith ( SpringJUnit4ClassRunner.class )
 @ContextConfiguration ( locations =

@@ -7,7 +7,7 @@ import java.io.Serializable;
  * CertiFactura
  * Certicámara S.A.
  * DataTransferObject
- * @author Seven4N Ltda.
- * May 10, 2012
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
 public interface DataTransferObject extends Serializable { }

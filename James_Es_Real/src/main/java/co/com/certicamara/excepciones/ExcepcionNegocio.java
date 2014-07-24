@@ -1,11 +1,12 @@
 package co.com.certicamara.excepciones;
 
 /**
+ * 
  * CertiFactura
  * Certicámara S.A.
  * ExcepcionNegocio
- * @author Seven4N Ltda.
- * Apr 25, 2012
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
 public class ExcepcionNegocio extends Throwable
 {
