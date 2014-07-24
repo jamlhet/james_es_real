@@ -1,0 +1,15 @@
+*.class
+.springBeans
+**/.setting/*
+**/.settings/*
+**/dist/*
+*~
+**/work/*
+**/dist/*
+**/bin/*
+*.swp
+**/.gitignore
+*mongo.properties
+*gitignore
+.gitignore
+.project
