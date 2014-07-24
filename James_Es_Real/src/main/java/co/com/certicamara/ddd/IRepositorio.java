@@ -17,11 +17,8 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoException;
 
-
-
 /**
  * 
- * CertiFactura
  * Certicámara S.A.
  * IRepositorio
  * @author Certicámara S.A.

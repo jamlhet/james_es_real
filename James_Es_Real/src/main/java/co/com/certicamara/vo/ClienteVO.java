@@ -4,7 +4,6 @@ import co.com.certicamara.ddd.IdentificadorVO;
 
 /**
  * 
- * CertiFactura
  * Certicámara S.A.
  * ClienteVO
  * @author Certicámara S.A.

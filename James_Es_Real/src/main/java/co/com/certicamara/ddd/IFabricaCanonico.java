@@ -4,7 +4,6 @@ package co.com.certicamara.ddd;
 
 /**
  * 
- * CertiFactura
  * Certicámara S.A.
  * IFabricaCanonico
  * @author Certicámara S.A.

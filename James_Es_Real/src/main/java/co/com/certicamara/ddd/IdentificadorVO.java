@@ -6,7 +6,6 @@ import java.io.Serializable;
 
 /**
  * 
- * CertiFactura
  * Certicámara S.A.
  * IdentificadorVO
  * @author Certicámara S.A.

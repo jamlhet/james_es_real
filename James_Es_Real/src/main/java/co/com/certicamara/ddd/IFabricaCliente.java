@@ -4,7 +4,6 @@ import java.util.LinkedHashMap;
 
 /**
  * 
- * CertiFactura
  * Certicámara S.A.
  * IFabricaCliente
  * @author Certicámara S.A.

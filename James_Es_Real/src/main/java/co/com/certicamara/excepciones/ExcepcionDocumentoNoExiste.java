@@ -2,7 +2,6 @@ package co.com.certicamara.excepciones;
 
 /**
  * 
- * CertiFactura
  * Certicámara S.A.
  * ExcepcionDocumentoNoExiste
  * @author Certicámara S.A.

@@ -2,7 +2,6 @@ package co.com.certicamara.dto;
 
 /**
  * 
- * CertiFactura
  * Certicámara S.A.
  * ClienteDTO
  * @author Certicámara S.A.

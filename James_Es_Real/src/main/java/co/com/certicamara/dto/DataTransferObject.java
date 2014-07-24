@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 /**
  * 
- * CertiFactura
  * Certicámara S.A.
  * DataTransferObject
  * @author Certicámara S.A.

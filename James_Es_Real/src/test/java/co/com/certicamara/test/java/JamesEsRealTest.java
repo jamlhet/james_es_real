@@ -19,7 +19,6 @@ import co.com.certicamara.vo.ClienteVO;
 
 /**
  * 
- * CertiFactura
  * Certicámara S.A.
  * JamesEsRealTest
  * @author Certicámara S.A.
