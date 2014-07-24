@@ -2,9 +2,11 @@ package co.com.certicamara.excepciones;
 
 /**
  * 
- * CertiFactura Certicámara S.A. ExcepcionDocumentoNoExiste
- * 
- * @author Seven4N Ltda. May 23, 2012
+ * CertiFactura
+ * Certicámara S.A.
+ * ExcepcionDocumentoNoExiste
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
 public class ExcepcionDocumentoNoExiste extends ExcepcionNegocio
 {

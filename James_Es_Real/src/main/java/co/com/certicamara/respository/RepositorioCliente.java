@@ -8,7 +8,14 @@ import co.com.certicamara.excepciones.ExcepcionExisteCliente;
 import co.com.certicamara.excepciones.ExcepcionMongoDb;
 import co.com.certicamara.excepciones.ExcepcionNoExisteCliente;
 import co.com.certicamara.vo.ClienteVO;
-
+/**
+ * 
+ * CertiFactura
+ * Certicámara S.A.
+ * RepositorioCliente
+ * @author Certicámara S.A.
+ * 24/07/2014
+ */
 public class RepositorioCliente extends IRepositorio< ClienteDTO >
 {
 

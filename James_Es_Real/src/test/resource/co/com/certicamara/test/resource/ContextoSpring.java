@@ -3,11 +3,12 @@ package co.com.certicamara.test.resource;
 import org.springframework.context.ApplicationContext;
 
 /**
+ * 
  * CertiFactura
  * Certicámara S.A.
- * AppContext
- * @author Seven4N Ltda.
- * Aug 15, 2012
+ * ContextoSpring
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
 public class ContextoSpring
 {

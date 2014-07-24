@@ -20,13 +20,12 @@ import com.mongodb.MongoException;
 
 
 /**
- * Clase abstracta que implementa la lógica de un repositorio basico, con las
- * operaciones de guardar, actualizar y buscar
  * 
- * @author hansen
- * 
- * @param <T>
- *            Tipo de Entidad que se va a almacenar
+ * CertiFactura
+ * Certicámara S.A.
+ * IRepositorio
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
 public abstract class IRepositorio<T>
 {

@@ -3,11 +3,13 @@ package co.com.certicamara.vo;
 import co.com.certicamara.ddd.IdentificadorVO;
 
 /**
- * CertiFactura Certicámara S.A. ClienteVO
  * 
- * @author Seven4N Ltda. May 28, 2012
+ * CertiFactura
+ * Certicámara S.A.
+ * ClienteVO
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
-
 public class ClienteVO extends IdentificadorVO
 {
 

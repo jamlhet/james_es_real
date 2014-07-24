@@ -9,8 +9,8 @@ import java.io.Serializable;
  * CertiFactura
  * Certicámara S.A.
  * IdentificadorVO
- * @author Seven4N Ltda.
- * May 30, 2012
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
 public abstract class IdentificadorVO implements Serializable
 {

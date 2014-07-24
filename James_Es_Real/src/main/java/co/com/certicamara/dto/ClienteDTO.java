@@ -1,11 +1,13 @@
 package co.com.certicamara.dto;
 
 /**
- * CertiFactura Certicámara S.A. ClienteDTO
  * 
- * @author Seven4N Ltda. May 28, 2012
+ * CertiFactura
+ * Certicámara S.A.
+ * ClienteDTO
+ * @author Certicámara S.A.
+ * 24/07/2014
  */
-
 public class ClienteDTO implements DataTransferObject
 {
 	
