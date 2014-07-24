@@ -22,5 +22,6 @@
 	<classpathentry kind="var" path="JAMES_SPRING_DATA/spring-data-mongodb-1.0.1.RELEASE.jar"/>
 	<classpathentry kind="var" path="JAMES_SPRING_DATA/spring-data-mongodb-cross-store-1.0.1.RELEASE.jar"/>
 	<classpathentry kind="var" path="JAMES_SPRING_DATA/spring-data-mongodb-log4j-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="JAMES_OTROS/junit-4.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
